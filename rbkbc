@@ -1,0 +1,156 @@
+#!/usr/bin/env ruby
+#
+# Sample program for rbktoblzcheck
+#
+# Mimics the functions of the ktoblzcheck tool
+# which is part of the ktoblzcheck distribution
+#
+# (c) 2004 Sascha Loetz (sloetz (a t) web.de)
+#
+# See LICENSE for the BSD-style license for this code
+#
+# This program is part of the rbktoblzcheck package
+# available at http://www.vdp-software.com/Rbktoblzcheck.html
+#
+# $Id: rbkbc,v 1.1 2004/10/28 19:10:19 vdpsoftware Exp $
+
+require 'getoptlong'
+require 'ktoblzcheck'
+
+# modes of operation
+FIND=1
+CHECK=2
+
+$bc=nil   # bank code
+$an=nil   # account number
+$ec=0     # exit code
+$df=nil   # data file
+$verbose=false
+$prg=File.basename($0)
+
+def print_help
+  puts "Usage: #{$prg} [OPTIONS]"
+  puts "--verbose, -v\t\t\treport --check results as text and return code"
+  puts "--find, -f\t\t\tfind mode: lookup details for a bank code (-b required)"
+  puts "--check,-c\t\t\tcheck mode: validate bank code and account number\n\t\t\t\t(-b and -a required)"
+  puts "--bank-code, -b bank code\tspecify bank code for --find or --check"
+  puts "--account-no, -a account number\tspecify account number for --check"
+  puts "--data-file,-d path\t\tuse a different data file"
+  puts
+  puts "Return codes:"
+  puts "0 OK"
+  puts "1 Failed"
+  puts "2 Unknown Error"
+  puts "3 Unknown Bank Code"
+  puts "4 Option Error"
+  puts
+  puts "Examples:"
+  puts "#{$prg} --verbose --check --bank-code 20030700 --account-no 0"
+  puts "#{$prg} -f -b 20030700"
+end
+
+begin # options
+
+  opts = GetoptLong.new(
+    [ "--verbose",   "-v",  GetoptLong::NO_ARGUMENT],
+    [ "--data-file", "-d",   GetoptLong::REQUIRED_ARGUMENT],
+    [ "--find",   "-f",     GetoptLong::NO_ARGUMENT],
+    [ "--check",  "-c",     GetoptLong::NO_ARGUMENT],
+    [ "--account-no", "-a",    GetoptLong::REQUIRED_ARGUMENT],
+    [ "--bank-code", "-b", GetoptLong::REQUIRED_ARGUMENT],
+    [ "--help",   "-h",    GetoptLong::NO_ARGUMENT ]  )
+
+  opts.quiet=true
+
+  # process the parsed options
+
+  opts.each do |opt, arg|
+    case opt
+      when "--account-no"
+        $an=arg.to_s
+      when "--bank-code"
+        $bc=arg.to_s
+      when "--data-file"
+        $df=arg.to_s
+      when "--check"
+        $mode=CHECK
+      when "--find"
+        $mode=FIND
+      when "--verbose"
+        $verbose=true
+      when "--help"
+        print_help
+        exit 0
+    end
+  end
+
+rescue => se
+  STDERR.print "#{$prg}: ",se.message,"\n"
+  exit 1
+end # rescue options
+
+#
+# option checking
+#
+case $mode
+  when FIND
+    if $bc.nil?
+      STDERR.puts "--find without --bank-code, not an easy task -- aborted"
+      exit 4
+    end
+  when CHECK
+    if $bc.nil?
+      STDERR.puts "--check without --bank-code, not an easy task -- aborted"
+      exit 4
+    end
+    if $an.nil?
+      STDERR.puts "--check without --account-no, not an easy task -- aborted"
+      exit 4
+    end
+  else
+    print_help
+    exit 4
+end
+
+#
+#
+# the "program"
+#
+#
+begin
+
+  KtoBlzCheck.new($df) do |kbc|
+    case $mode
+      when FIND
+        name,location=kbc.find($bc)
+        if name
+          puts "Found #{name} located in #{location}"
+        else
+          puts "No bank found for bank code #{$bc}"
+        end
+      when CHECK
+        case kbc.check($bc,$an)
+          when KtoBlzCheck::OK
+            puts "Valid bank code / account number combination" if $verbose
+          when KtoBlzCheck::ERROR
+            puts "Failed bank code / account number combination not valid" if $verbose
+            $ec=1
+          when KtoBlzCheck::UNKNOWN
+            puts "Couldn't check input for unknown reasons (shit happens)" if $verbose
+            $ec=2
+          when KtoBlzCheck::BANK_NOT_KNOWN
+            puts "Unknown bank for bank code #{bc}" if $verbose
+            $ec=3
+          else
+            puts "Funny, that you see this message. Something went terribly wrong." if $verbose
+            $ec=2
+        end # case kbc.check
+    end # case
+  end # new do
+
+rescue => se
+  STDERR.puts "#{$prg} error: "+se.message
+  exit 2
+end
+
+exit $ec

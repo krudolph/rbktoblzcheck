@@ -1,0 +1,158 @@
+10000000	09	Bundesbank	Berlin
+10010010	24	Postbank	Berlin
+10010111	13	SEB	Berlin
+10010222	10	ABN AMRO Bank Ndl Deutschland	Berlin
+10010424	09	Aareal Bank	Berlin
+10020000	69	Berliner Bank Ndl d Landesbank Berlin	Berlin
+10020100	09	Riggs Bank Europe	Berlin
+10020200	60	ING BHF-BANK	Berlin
+10020500	09	Sozialbank	Berlin
+10020890	99	Bayer Hypo- und Vereinsbank	Berlin
+10022200	69	Bankgesellschaft Berlin	Berlin
+10030200	09	Berlin-Hannoversche Hypothekenbank	Berlin
+10030400	09	ABK-Kreditbank	Berlin
+10030500	09	Bankhaus Löbbecke Ndl Berlin, Fasanenstraße	Berlin
+10030600	09	Bankhaus Oswald Kruber	Berlin
+10030700	16	Gries & Heissel - Bankiers	Berlin
+10040000	13	Commerzbank Berlin (West)	Berlin
+10045050	13	Commerzbank Service-BZ	Berlin
+10050000	20	Landesbank Berlin -Gz- zgl Berliner Sparkasse	Berlin
+10050001	20	Landesbank Berlin -Girozentrale-	Berlin
+10050005	09	Landesbank Berlin -Girozentrale- E 1	Berlin
+10050006	09	Landesbank Berlin -Girozentrale- E 2	Berlin
+10050500	09	LBS Ost Berlin	Berlin
+10050600	08	WestLB Berlin	Berlin
+10050999	09	DekaBank Berlin	Berlin
+10060198	06	Pax-Bank	Berlin
+10060237	33	Evangelische Darlehnsgenossenschaft	Berlin
+10070000	63	Deutsche Bank Fil Berlin	Berlin
+10070024	63	Deutsche Bank Privat und Geschäftskunden F 700	Berlin
+10070989	63	Eurohypo Ndl DB	Berlin
+10080000	76	Dresdner Bank zgl f Bank f Handel u Industrie	Berlin
+10080005	76	Dresdner Bank Zw A	Berlin
+10080006	76	Dresdner Bank Zw B	Berlin
+10080088	76	Dresdner Bank Berlin Bs 88	Berlin
+10080090	76	Dresdner Bank Gf Berlin	Berlin
+10080900	76	Dresdner Bank Otto Scheurmann	Berlin
+10089260	09	Dresdner Bank ITGK	Berlin
+10090000	06	Berliner Volksbank	Berlin
+10090300	09	Bank für Schiffahrt (BFS) Fil d Ostfr VB Leer	Berlin
+10090400	09	Deutsche Genossenschafts-Hypothekenbank	Berlin
+10090603	14	Deutsche Apotheker- und Ärztebank	Berlin
+20000000	09	Bundesbank	Hamburg
+20010020	24	Postbank (Giro)	Hamburg
+20010111	13	SEB	Hamburg
+20010200	09	HSH Nordbank Hypo	Hamburg
+20010424	09	Aareal Bank	Hamburg
+20010800	09	Hanseatische i-Bank	Hamburg
+20020200	09	SEB Merchant Bank Hamburg	Hamburg
+20020500	09	Jyske Bank Fil Hamburg	Hamburg
+20020860	70	Bayer Hypo- und Vereinsbank(ehem. Hypo)	Hamburg
+20020900	09	Signal Iduna Bauspar	Hamburg
+20030000	68	Vereins- und Westbank	Hamburg
+20030300	06	Donner Bank, C.H.	Hamburg
+20030400	00	Marcard, Stein & Co Bankiers	Hamburg
+20030500	06	Yapi Kredi Bank Deutschland	Hamburg
+20030600	09	Sydbank Fil Hamburg	Hamburg
+20030700	10	Merck Finck & Co	Hamburg
+20030900	06	Bankhaus Wölbern & Co	Hamburg
+20040000	13	Commerzbank	Hamburg
+30000000	09	Bundesbank	Düsseldorf
+30010111	13	SEB	Düsseldorf
+30010200	09	AEGON Bank	Düsseldorf
+30010400	09	IKB Deutsche Industriebank	Düsseldorf
+30010700	09	Bank of Tokyo-Mitsubishi, The -	Düsseldorf
+30010900	09	Nationalbank von Griechenland Fil Düsseldorf	Düsseldorf
+30020000	32	Westfalenbank	Düsseldorf
+30020300	10	Comfort Card Services	Ratingen
+30020400	00	Falke Bank	Düsseldorf
+30020500	60	ING BHF-BANK	Düsseldorf
+30020700	09	Mizuho Corporate Bank Ltd Fil Düsseldorf	Düsseldorf
+30020800	06	Commercial Bank of Greece (Germany)	Düsseldorf
+30020900	57	Citibank Privatkunden	Düsseldorf
+30020941	57	Citibank Privatkunden Region München	München
+30020944	57	Citibank Privatkunden Region Duisburg	Duisburg
+30020945	57	Citibank Privatkunden Region Hannover	Hannover
+30020946	57	Citibank Privatkunden Region Mannheim	Mannheim
+30020947	57	Citibank Privatkunden Region Gelsenkirchen	Gelsenkirchen
+30020948	57	Citibank Privatkunden Region Hamburg	Hamburg
+30020949	57	Citibank Privatkunden Region Köln	Köln
+30030100	56	SBroker	Wiesbaden
+30030880	56	HSBC Trinkaus & Burkhardt	Düsseldorf
+30030900	00	Merck Finck & Co	Düsseldorf
+30040000	13	Commerzbank	Düsseldorf
+30050000	08	WestLB Düsseldorf	Düsseldorf
+30050110	00	Stadtsparkasse Düsseldorf	Düsseldorf
+30052525	08	Landesbank NRW Düsseldorf	Düsseldorf
+30055500	09	dwpbank	Düsseldorf
+30060010	44	Westdeutsche Genossenschafts-Zentralbank	Düsseldorf
+30060601	14	Deutsche Apotheker- und Ärztebank Ndl	Düsseldorf
+30060992	91	PSD Bank Rhein-Ruhr	Düsseldorf
+30070010	63	Deutsche Bank	Düsseldorf
+30070024	63	Deutsche Bank Privat und Geschäftskunden	Düsseldorf
+30070989	63	Eurohypo Ndl DB	Düsseldorf
+30080000	76	Dresdner Bank	Düsseldorf
+30080005	76	Dresdner Bank Zw 05	Düsseldorf
+30080022	76	Dresdner Bank Ztv 22	Düsseldorf
+30080038	76	Dresdner Bank Zw 38	Düsseldorf
+40000000	09	Bundesbank	Münster, Westf
+40010111	13	SEB	Münster, Westf
+40030000	61	Münsterländische Bank Thie & Co	Münster, Westf
+40040028	13	Commerzbank	Münster, Westf
+40050000	08	WestLB Münster	Münster, Westf
+40050150	00	Sparkasse Münsterland Ost	Münster, Westf
+40051475	00	Sparkasse Warendorf -alt-	Warendorf
+40052525	08	Landesbank NRW Münster	Münster, Westf
+40060000	44	Westdeutsche Genossenschafts-Zentralbank	Münster, Westf
+40060104	34	DGM Ev Darlehns-Genossenschaft -alt-	Münster, Westf
+40060265	34	DKM Darlehnskasse Münster	Münster, Westf
+40060300	09	Westfälische Landschaft Bodenkreditbank	Münster, Westf
+50000000	09	Bundesbank	Frankfurt am Main
+50010060	24	Postbank	Frankfurt am Main
+50010111	13	SEB	Frankfurt am Main
+50010200	09	Akbank T.A.S. Ndl Deutschland	Frankfurt am Main
+50010424	09	Aareal Bank	Frankfurt am Main
+50010517	09	Allgemeine Deutsche Direktbank	Frankfurt am Main
+50010700	09	Degussa Bank	Frankfurt am Main
+50010800	09	DEPFA Deutsche Pfandbriefbank	Frankfurt am Main
+50010900	09	Bank of America	Frankfurt am Main
+50012800	09	Alte Leipziger Bauspar	Bad Homburg v d Höhe
+50020160	70	Bayer Hypo- und Vereinsbank Ndl 427	Aschheim
+50020200	60	ING BHF-BANK	Frankfurt am Main
+60000000	09	Bundesbank	Stuttgart
+60010070	24	Postbank	Stuttgart
+60010111	13	SEB	Stuttgart
+60010424	09	Aareal Bank	Stuttgart
+60010500	09	Württembergische Hypothekenbank	Stuttgart
+60010600	09	Nationalbank von Griechenland Fil Stuttgart	Stuttgart
+60010700	09	Landeskreditbank Baden-Württemberg Förderbank	Stuttgart
+60020030	65	Baden-Württembergische Bank	Stuttgart
+60020100	09	Schwäbische Bank	Stuttgart
+60020290	99	Bayer Hypo- und Vereinsbank	Stuttgart
+60020300	09	VON ESSEN Bankgesellschaft	Stuttgart
+60020400	09	GE Bank	Köln
+70000000	09	Bundesbank	München
+70010080	24	Postbank (Giro)	München
+70010111	13	SEB	München
+70010424	09	Aareal Bank	München
+70010500	09	Hypo Real Estate Bank München	München
+70011000	09	HSH Nordbank Hypo	Hamburg
+70011200	09	Bank Vontobel Österreich	München
+80000000	09	Bundesbank	Halle (Saale)
+80020086	99	Bayer Hypo- und Vereinsbank	Halle (Saale)
+80020087	99	Bayer Hypo- und Vereinsbank	Dessau, Anh
+80020130	65	Baden-Württembergische Bank	Halle (Saale)
+80040000	13	Commerzbank	Halle (Saale)
+80050500	20	Kreissparkasse Merseburg-Querfurt	Merseburg
+80053000	20	Sparkasse Burgenlandkreis	Zeitz, Elster
+80053502	52	Kreissparkasse Quedlinburg	Quedlinburg
+80053522	52	Kreissparkasse Aschersleben	Aschersleben, Sachs-Anh
+80053552	52	Kreissparkasse Sangerhausen	Sangerhausen
+87080000	76	Dresdner Bank	Chemnitz, Sachs
+87095824	06	Volksbank Vogtland	Plauen, Vogtl
+87095934	06	Volksbank Zwickau	Zwickau
+87095974	06	Volksbank-Raiffeisenbank Glauchau	Glauchau
+87096034	06	Volksbank Erzgebirge	Annaberg-Buchholz
+87096074	06	Freiberger Bank	Freiberg, Sachs
+87096124	06	Volksbank	Mittweida
+87096214	06	Volksbank Chemnitz	Chemnitz, Sachs
