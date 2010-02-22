@@ -1,0 +1,122 @@
+Ruby KtoBlzCheck
+================
+
+rbKtoBlzCheck is a small Ruby extension for Linux (written in C) that provides
+an interface for libktoblzcheck, a library to check German account numbers and
+bank codes. See http://ktoblzcheck.sourceforge.net for details.
+
+
+Ruby Interface:
+===============
+
+Example:
+-----------------------------------------------------------------------
+require 'ktoblzcheck'
+
+$bc="20030700"
+$an="0"
+
+puts "Testing Bank Code: #{$bc} / Account No. #{$an}"
+
+KtoBlzCheck.new do |kbc|
+  name,location=kbc.find($bc)
+  if name
+    puts "Bank found! #{name} located in #{location}"
+  else
+    puts "Bank not found!"
+  end
+  case kbc.check($bc,$an)
+    when KtoBlzCheck::ERROR
+      puts "Failed, bank code and account number don't match"
+    when KtoBlzCheck::OK
+      puts "Success, valid combination of bank code and account number"
+    when KtoBlzCheck::UNKNOWN
+      puts "Unknown."
+    when KtoBlzCheck::BANK_NOT_KNOWN
+      puts "Unknown bank code"
+    else
+      puts "Never reached :)"
+  end
+end
+-----------------------------------------------------------------------
+
+For more code examples refer to the rbkbc program and the test-*.rb files
+provided with this distribution.
+
+
+Interface documentation:
+========================
+
+-----------------------------------------------------------------------
+KtoBlzCheck.new [ |block| ] -> obj
+KtoBlzCheck.new(datafilepath) [ |block| ] -> obj
+-----------------------------------------------------------------------
+
+Constructs a new KtoBlzCheck object, returns it or passes it to an 
+optional code block. If no block is provided, the user must call 
+KtoBlzCheck#close to ensure that all resources are freed
+after usage.
+
+If a parameter is passed to new it is interpreted as the path to the
+data file to be used by libktoblzcheck. When the parameter is omitted,
+the default file of libktoblzcheck is used 
+(usually /usr/[local/]share/[lib]ktoblzcheck[*]/bankdata.txt).
+
+A nil value passed as parameter is ignored.
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+KtoBlzCheck#close
+-----------------------------------------------------------------------
+Closes the KtoBlzCheck object's handle for libktoblzcheck. Must be 
+called to prevent resource leaks if KtoBlzCheck#new is not used with 
+block syntax.
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+KtoBlzCheck#num_records -> aFixnum
+-----------------------------------------------------------------------
+Returns the number of entries in the currently used data file for
+libktoblzcheck.
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+KtoBlzCheck#check(bank_code, account_no) -> aFixnum
+-----------------------------------------------------------------------
+Checks if bank_code and account_no form a valid combination. The 
+returned Fixnum indicates the result. The following constants can be
+used test the result:
+
+KtoBlzCheck::OK -> valid combination of bank code and account number
+KtoBlzCheck::ERROR -> !OK
+KtoBlzCheck::UNKNOWN -> no verification possible for unknown reason
+KtoBlzCheck::BANK_NOT_KNOWN -> bank code not known
+
+If bank_code and account_no are not of type String a TypeError is
+raised.
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+KtoBlzCheck#find(bank_code) -> anArray
+-----------------------------------------------------------------------
+Looks up bank name and bank location (city) for the bank identified
+by bank_code.
+
+Returns an array with the bank's name (index 0) and the bank's location 
+(index 1). The returned array is empty if no bank is found for the given 
+bank code.
+-----------------------------------------------------------------------
+
+
+
+See file INSTALL for install instructions
+
+http://blog.cadego.de/
+http://blog.zopy.de/
+
+# $Id: README,v 1.1 2004/10/28 19:10:19 vdpsoftware Exp $
+# vim: set et ts=2 sw=2 tw=72:
