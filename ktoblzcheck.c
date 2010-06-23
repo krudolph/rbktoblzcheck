@@ -101,10 +101,10 @@ static VALUE init(int argc, VALUE *argv, VALUE self)
 		 * We do basic access checking ourselves and hope for the best :)
 		 */
 
-		if (0!=access(RSTRING(dp)->ptr,R_OK)) {
-			rb_raise(g_error,"Can't access file %s",RSTRING(dp)->ptr);
+		if (0!=access(RSTRING_PTR(dp),R_OK)) {
+			rb_raise(g_error,"Can't access file %s",RSTRING_PTR(dp));
 		}
-		g_anc=AccountNumberCheck_new_file(RSTRING(dp)->ptr);
+		g_anc=AccountNumberCheck_new_file(RSTRING_PTR(dp));
 	}
 
 	/*
@@ -148,7 +148,7 @@ static VALUE check(VALUE self, VALUE blz, VALUE account)
 	 * BANK_NOT_KNOWN = 3
 	 */ 
 
-	res=AccountNumberCheck_check(g_anc,RSTRING(blz)->ptr,RSTRING(account)->ptr);
+	res=AccountNumberCheck_check(g_anc,RSTRING_PTR(blz),RSTRING_PTR(account));
 
 	return INT2FIX(res);
 
@@ -174,7 +174,7 @@ static VALUE find_info(VALUE self, VALUE blz)
 	VALUE ret=rb_ary_new2(2);
 	Check_Type(blz, T_STRING);
 	
-	const AccountNumberCheck_Record* cr=AccountNumberCheck_findBank(g_anc,RSTRING(blz)->ptr);
+	const AccountNumberCheck_Record* cr=AccountNumberCheck_findBank(g_anc,RSTRING_PTR(blz));
 
 	if (NULL!=cr) {
 		rb_ary_push(ret,rb_str_new2(AccountNumberCheck_Record_bankName(cr)));
