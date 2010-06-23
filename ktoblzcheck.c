@@ -55,6 +55,12 @@ static VALUE g_error;
 static VALUE g_ktoblzcheck;
 static AccountNumberCheck* g_anc=NULL;
 
+#ifndef RUBY_19
+#ifndef RSTRING_PTR
+#define RSTRING_PTR(v) (RSTRING(v)->ptr)
+#endif
+#endif
+
 /*
  * KtoBlzCheck#close 
  */
