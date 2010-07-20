@@ -39,8 +39,7 @@
 *  DAMAGE.
 *************************************************************************
 * 
-* This file is part of the rbktoblzcheck package available at
-* http://www.vdp-software.com/Rbktoblzcheck.html
+* This file is part of the rbktoblzcheck package available as a gem
 * 
 * $Id: ktoblzcheck.c,v 1.1 2004/10/28 19:10:19 vdpsoftware Exp $
 *  
@@ -193,9 +192,9 @@ static VALUE find_info(VALUE self, VALUE blz)
 /*
  * Ruby extension stuff
  */
-void Init_ktoblzcheck()
+void Init_ktoblzcheck_ext()
 {
-	g_ktoblzcheck = rb_define_class("KtoBlzCheck", rb_cObject);
+	g_ktoblzcheck = rb_define_module("KtoBlzCheck");
 	g_error = rb_define_class_under(g_ktoblzcheck, "Error", rb_eStandardError);
 	rb_define_method(g_ktoblzcheck, "initialize", init, -1);
 	rb_define_method(g_ktoblzcheck, "check", check, 2 );
