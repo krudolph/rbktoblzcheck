@@ -192,7 +192,7 @@ static VALUE find_info(VALUE self, VALUE blz)
 /*
  * Ruby extension stuff
  */
-void Init_ktoblzcheck_ext()
+void Init_ktoblzcheck()
 {
 	g_ktoblzcheck = rb_define_class("KtoBlzCheck", rb_cObject);
 	g_error = rb_define_class_under(g_ktoblzcheck, "Error", rb_eStandardError);

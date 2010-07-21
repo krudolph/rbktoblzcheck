@@ -9,5 +9,5 @@ if !have_library('ktoblzcheck')
   STDERR.puts "Hint: visit http://ktoblzcheck.sourceforge.net to obtain a source distribution tar-ball or check the package archives of your distribution (e.g. for Debian `apt-get install libktoblzcheck1-dev`)"
   exit 1
 end
-dir_config('ktoblzcheck_ext')
-create_makefile('ktoblzcheck_ext')
+dir_config('ktoblzcheck')
+create_makefile('ktoblzcheck')
