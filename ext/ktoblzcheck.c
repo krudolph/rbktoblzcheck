@@ -194,7 +194,7 @@ static VALUE find_info(VALUE self, VALUE blz)
  */
 void Init_ktoblzcheck_ext()
 {
-	g_ktoblzcheck = rb_define_module("KtoBlzCheck");
+	g_ktoblzcheck = rb_define_class("KtoBlzCheck", rb_cObject);
 	g_error = rb_define_class_under(g_ktoblzcheck, "Error", rb_eStandardError);
 	rb_define_method(g_ktoblzcheck, "initialize", init, -1);
 	rb_define_method(g_ktoblzcheck, "check", check, 2 );
